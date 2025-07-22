@@ -73,7 +73,7 @@ class aboutpage extends StatelessWidget {
               ),
               SizedBox(height: 8),
               Text('Have questions or suggestions?'),
-              Text('Reach out to us at: yashpatil131103@gmail.com'),
+              Text('Reach out to us at: prashantgorde05@gmail.com'),
             ],
           ),
         ),

@@ -101,7 +101,27 @@ class _EmpHomePageState extends State<EmpHomePage> {
       length: 3,
       child: Scaffold(
         appBar: AppBar(
-          title: Text("Welcome ${userName.toUpperCase()}"),
+          title: Column(
+              crossAxisAlignment: CrossAxisAlignment.start,
+              children: [
+                Text(
+                  'Welcome ${userName.split(" ")[0]}',
+                  style: const TextStyle(
+                    fontSize: 20,
+                    fontWeight: FontWeight.bold,
+                    color: Colors.black,
+                  ),
+                ),
+                Text(
+                  'Employee',
+                  style: const TextStyle(
+                    fontSize: 13,
+                    fontWeight: FontWeight.bold,
+                    color: Colors.black,
+                  ),
+                ),
+              ],
+            ),
           actions: [
             IconButton(
               icon: const Icon(Icons.refresh),
@@ -127,7 +147,12 @@ class _EmpHomePageState extends State<EmpHomePage> {
           ),
         ),
 
-        drawer: MyDrawer(widget: EmpHomePage()),
+         drawer: Align(
+            alignment: Alignment.centerLeft,
+
+            child: SizedBox(
+              width: 230,
+              child: const MyDrawer(widget: EmpHomePage()))),
         body: changethetabpage(projectNotifier, assignedProjects, isLoading),
       ),
     );

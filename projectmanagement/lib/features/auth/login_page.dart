@@ -147,6 +147,11 @@ class _LoginPageState extends State<LoginPage> {
   Widget _buildRegisterLink() {
     return TextButton(
       onPressed: () {
+        emailController.clear();
+        passwordController.clear();
+        setState(() {
+          
+        });
         Navigator.push(
           context,
           MaterialPageRoute(builder: (context) => RegisterPage()),

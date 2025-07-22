@@ -42,9 +42,10 @@ class _TeamleadHomePageState extends State<TeamleadHomePage> {
         child: Scaffold(
           appBar: AppBar(
             title: Column(
+              crossAxisAlignment: CrossAxisAlignment.start,
               children: [
                 Text(
-                  'Welcome ${userName.toUpperCase()}',
+                  'Welcome ${userName.split(" ")[0]}',
                   style: const TextStyle(
                     fontSize: 20,
                     fontWeight: FontWeight.bold,
@@ -95,7 +96,12 @@ class _TeamleadHomePageState extends State<TeamleadHomePage> {
             ),
           ),
 
-          drawer: const MyDrawer(widget: TeamleadHomePage()),
+          drawer: Align(
+            alignment: Alignment.centerLeft,
+
+            child: SizedBox(
+              width: 230,
+              child: const MyDrawer(widget: TeamleadHomePage()))),
           body: TabBarView(
             children: [
               Consumer<TeamleadNotifier>(

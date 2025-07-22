@@ -89,30 +89,97 @@ class _FourthPageState extends State<FourthPage> {
               children: [
                 Padding(
                   padding: EdgeInsets.symmetric(vertical: 8.0),
-                  child: Text(
-                    "Name: ${userData!["name"]}",
-                    style: TextStyle(fontSize: 18),
+                  child: Row(
+                    children: [
+                      Text(
+                        "Name: ",
+                        style: TextStyle(
+                          fontSize: 18,
+                          fontWeight: FontWeight.bold,
+                        ),
+                      ),
+                      Text(
+                        "${userData!["name"]}",
+                        style: TextStyle(fontSize: 18),
+                      ),
+                    ],
                   ),
                 ),
                 Padding(
                   padding: EdgeInsets.symmetric(vertical: 8.0),
-                  child: Text(
-                    "Email id: ${userData["id"]}",
-                    style: TextStyle(fontSize: 18),
+                  child: Row(
+                    children: [
+                      Text(
+                        "Email id: ",
+                        style: TextStyle(
+                          fontSize: 18,
+                          fontWeight: FontWeight.bold,
+                        ),
+                      ),
+                      Text("${userData["id"]}", style: TextStyle(fontSize: 18)),
+                    ],
                   ),
                 ),
                 Padding(
                   padding: EdgeInsets.symmetric(vertical: 8.0),
-                  child: Text(
-                    "Designation:  ${userData["type"]}",
-                    style: TextStyle(fontSize: 18),
+                  child: Row(
+                    children: [
+                      Text(
+                        "Designation:  ",
+                        style: TextStyle(
+                          fontSize: 18,
+                          fontWeight: FontWeight.bold,
+                        ),
+                      ),
+                      Text(
+                        "${userData["type"]}",
+                        style: TextStyle(fontSize: 18),
+                      ),
+                    ],
                   ),
                 ),
                 Padding(
                   padding: EdgeInsets.symmetric(vertical: 8.0),
-                  child: Text(
-                    "${userData["additionalInfo"]}",
-                    style: TextStyle(fontSize: 18),
+                  child: Row(
+                    children: [
+                      if (userData["type"] == "Employee")
+                        Column(
+                          crossAxisAlignment: CrossAxisAlignment.start,
+                          children: [
+                            Text(
+                              "Additional Info: ",
+                              style: TextStyle(
+                                fontSize: 18,
+                                fontWeight: FontWeight.bold,
+                              ),
+                            ),
+
+                            Text(
+                              "${userData["additionalInfo"].toString().split(",")[0]}",
+                              style: TextStyle(fontSize: 18),
+                            ),
+
+                            Text(
+                              "${userData["additionalInfo"].toString().split(",")[1]}",
+                              style: TextStyle(fontSize: 18),
+                            ),
+                          ],
+                        ),
+
+                      if (userData["type"] == "TeamLead")
+                        Text(
+                          "${userData["additionalInfo"].toString().split(":")[0]}: ",
+                          style: TextStyle(
+                            fontSize: 18,
+                            fontWeight: FontWeight.bold,
+                          ),
+                        ),
+                      if (userData["type"] == "TeamLead")
+                        Text(
+                          "${userData["additionalInfo"].toString().split(":")[1]}",
+                          style: TextStyle(fontSize: 18),
+                        ),
+                    ],
                   ),
                 ),
 

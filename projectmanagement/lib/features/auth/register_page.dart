@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_colorpicker/flutter_colorpicker.dart';
+import 'package:google_fonts/google_fonts.dart';
 import 'package:magmentv101/constants/app_theme.dart';
 import 'package:magmentv101/constants/constants.dart';
 import 'package:magmentv101/features/auth/model/user_model.dart';
@@ -371,6 +372,7 @@ class _RegisterPageState extends State<RegisterPage> {
       decoration: AppTheme.inputDecoration.copyWith(
         prefixIcon: Icon(Icons.supervisor_account, color: AppTheme.iconColor),
       ),
+      isExpanded: true,
     
       items:
           organizationDomains
@@ -380,7 +382,12 @@ class _RegisterPageState extends State<RegisterPage> {
               )
               .toList(),
       onChanged: (value) => setState(() => selectedDomain = value),
-      hint: Text('Select Domain',overflow: TextOverflow.ellipsis),
+      hint: Text('Select Domain',overflow: TextOverflow.ellipsis,style:GoogleFonts.quicksand(
+    fontSize: 14,
+    color: Colors.black,
+    fontWeight: FontWeight.bold
+    
+  )),
     );
   }
 
@@ -398,7 +405,12 @@ class _RegisterPageState extends State<RegisterPage> {
             );
           }).toList(),
       onChanged: (value) => setState(() => selectedTeamLead = value),
-      hint: Text('Select Team Lead'),
+      hint: Text('Select Team Lead',overflow: TextOverflow.ellipsis,style:GoogleFonts.quicksand(
+    fontSize: 14,
+    color: Colors.black,
+    fontWeight: FontWeight.bold
+    
+  )),
     );
   }
 
@@ -437,7 +449,12 @@ class _RegisterPageState extends State<RegisterPage> {
           setState(() => selectedSkill = value);
         }
       },
-      hint: Text('Select Skill', style: AppTheme.inputTextStyle),
+      hint: Text('Select Skill', style:GoogleFonts.quicksand(
+    fontSize: 14,
+    color: Colors.black,
+    fontWeight: FontWeight.bold
+    
+  )),
     );
   }
 

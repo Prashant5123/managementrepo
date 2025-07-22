@@ -59,7 +59,8 @@ class ManagerHomePage extends StatelessWidget {
           },
         ),
         SecondPage(),
-        FourthPage(),
+        FourthPage()
+       
       ],
     );
   }
@@ -73,12 +74,15 @@ class ManagerHomePage extends StatelessWidget {
         child: Scaffold(
           appBar: AppBar(
             automaticallyImplyLeading: true,
-            title: Column(
+            title:  Column(
+              crossAxisAlignment: CrossAxisAlignment.start,
               children: [
                 Text(
-                  "Manager",
-                  style: AppTheme.headlineTextStyle.copyWith(
-                    color: Colors.white,
+                  'Welcome Pavan',
+                  style: const TextStyle(
+                    fontSize: 20,
+                    fontWeight: FontWeight.bold,
+                    color: Colors.black,
                   ),
                 ),
                 Text(

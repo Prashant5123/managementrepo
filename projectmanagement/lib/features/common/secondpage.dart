@@ -88,8 +88,10 @@ class _FirstPageState extends State<SecondPage> {
               ),
             ),
             Center(
-              child: Text(''' First Single tap to select date to select 
-            and then double tap to enter '''),
+              child: Padding(
+                padding: const EdgeInsets.symmetric(horizontal: 30),
+                child: Text(''' First Single tap to select date and then double tap to enter ''',textAlign: TextAlign.center,),
+              ),
             ),
           ],
         ),
